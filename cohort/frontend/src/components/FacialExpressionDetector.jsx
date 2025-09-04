@@ -71,7 +71,7 @@ const FacialExpressionDetector = ({ setSongs }) => {
     if (mostProbableExpression && isDetecting) {
       const fetchSongs = async () => {
         try {
-          const response = await axios.get(`http://localhost:3000/songs?mood=${mostProbableExpression}`);
+          const response = await axios.get(`https://auratunes.onrender.com/songs?mood=${mostProbableExpression}`);
           console.log('Fetched songs:', response.data);
           setSongs(response.data.song); // Update songs via the setSongs prop
         } catch (err) {
